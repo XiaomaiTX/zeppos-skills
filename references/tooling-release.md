@@ -39,3 +39,5 @@
 
 先检查 Zepp OS 官方推荐的 npm 包，再核实包支持的 API_LEVEL、运行时和授权。第三方包可能依赖不支持的 Promise、Node API 或动态代码；不要因其可在 Node.js 测试中运行就假定手表运行时兼容。
 
+官方推荐列表包含 ZML（@zeppos/zml）。引入前先阅读 [ZML 参考](zml.md)，锁定版本并核对实际包的 exports、API_LEVEL、Side Service 声明及 lockfile；ZML 内部实现细节不等于跨版本保证。
+

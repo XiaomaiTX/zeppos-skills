@@ -27,7 +27,7 @@
 ## 手机端组件 API
 
 - **Settings App**：AppSettingsPage、render 函数组件、SettingsStorage。参考[设置应用框架](https://docs.zepp.com/zh-cn/docs/guides/framework/app-settings/)和[设置应用 API](https://docs.zepp.com/zh-cn/docs/reference/app-settings-api/)。
-- **Side Service**：AppSideService、Messaging、Fetch、SettingsStorage、文件传输/下载与图像转换。参考[伴生服务 API](https://docs.zepp.com/zh-cn/docs/reference/side-service-api/)。
+- **Side Service**：AppSideService、Messaging、Fetch、SettingsStorage、文件传输/下载与图像转换。参考[伴生服务 API](https://docs.zepp.com/zh-cn/docs/reference/side-service-api/)；复杂 Device App ↔ Side Service 通信可评估 [ZML 封装与版本边界](zml.md)。
 - 设备端和手机端有不同运行时及 API；在错误运行时调用模块不会变成兼容代码。
 
 ## Watchface API

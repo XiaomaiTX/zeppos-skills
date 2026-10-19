@@ -6,12 +6,14 @@
 
 | 场景 | 推荐连接方式 |
 | --- | --- |
-| 手表设备应用 ↔ 手机伴生服务 | BLE 消息；复杂协议可评估官方 ZML |
+| 手表设备应用 ↔ 手机伴生服务 | 简单消息可用原生 Messaging；复杂双向请求、统一消息管理或 HTTP 代理优先评估官方推荐的 ZML |
 | 设置应用 ↔ 伴生服务 | 共享 SettingsStorage；写入会触发对端更新/重绘 |
 | 伴生服务 ↔ 外部服务器 | Side Service Fetch API |
 | 设备应用 ↔ 自身多页面 | 路由参数、App globalData、本地存储等；按数据寿命选择 |
 
 先读[整体架构](https://docs.zepp.com/zh-cn/docs/guides/architecture/arc/)和[目录结构](https://docs.zepp.com/zh-cn/docs/guides/architecture/folder-structure/)；Side Service 参考[简介](https://docs.zepp.com/zh-cn/docs/guides/framework/side-service/intro/)及[API](https://docs.zepp.com/zh-cn/docs/reference/side-service-api/)。不要把重网络请求或手机 UI 逻辑放到手表 Device App。
+
+ZML（@zeppos/zml）是官方推荐 npm 封装库，适合双向 RPC、HTTP 代理、消息分片和 TransferFile 接入；简单消息仍可直接使用原生 Messaging。它封装 Zepp OS 能力，不新增网络、BLE 或文件 API。按需读取 [ZML 参考](zml.md)，核对具体版本、API_LEVEL 与设备兼容性。
 
 ## Device App 生命周期
 
