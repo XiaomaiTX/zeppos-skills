@@ -1,0 +1,4 @@
+interface:
+  display_name: "ZeppOS 开发"
+  short_description: "ZeppOS 小程序、表盘与穿戴设备应用的开发、适配和验证"
+  default_prompt: "Use $zeppos-development to plan and implement a Zepp OS Mini Program."
