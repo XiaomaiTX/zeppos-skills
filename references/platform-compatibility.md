@@ -37,7 +37,7 @@ API_LEVEL 表示某个固件承诺提供的 JS API 能力，不等于 Zepp OS �
 
 ## JavaScript Runtime 边界
 
-按设备端当前文档的支持情况编写代码：ES6 可用；动态执行代码被禁用，eval 与 new Function 不支持（new Function('return this') 例外）；文档标注 Promise、Generator 和 JavaScript timers 不支持。不要默认浏览器 DOM、Fetch、Node.js 文件系统或 Node 原生模块可用。网络请求优先放在 Side Service，并按 Side Service Fetch API 实现。若项目模板、CLI 或目标固件表现与文档不一致，构造最小复现并在模拟器和真机验证。
+按应用形态和目标 API_LEVEL 对应的当前文档编写代码：当前 v3+ JavaScript 支持页说明 ES6 可用，并禁止动态执行代码（`eval`、`new Function`；`new Function('return this')` 例外）；当前全局 `setTimeout` / `clearTimeout` API 页标注 API_LEVEL 2.0 起支持。旧版 v2 JavaScript 支持页曾将 Promise、Generator 和 timers 列为不支持；不要把这条旧版概述直接套用到新 API，也不要据此推断当前运行时对所有特性的支持。核对具体 API 页面、应用类型和最低 API_LEVEL；Promise、Generator 等未在当前对应页面承诺的特性应避免依赖，或用目标运行时实测。不要默认浏览器 DOM、Fetch、Node.js 文件系统或 Node 原生模块可用。网络请求优先放在 Side Service，并按 Side Service Fetch API 实现。若项目模板、CLI 或目标固件表现与文档不一致，构造最小复现并在模拟器和真机验证。
 
-参考：[JavaScript 支持情况](https://docs.zepp.com/zh-cn/docs/guides/framework/device/js-support/)。
+参考：[v3+ JavaScript 支持情况](https://docs.zepp.com/zh-cn/docs/guides/framework/app-settings/js-support/)、[v2 JavaScript 支持情况](https://docs.zepp.com/zh-cn/docs/v2/guides/framework/device/js-support/)、[setTimeout](https://docs.zepp.com/zh-cn/docs/reference/device-app-api/newAPI/global/setTimeout/)、[clearTimeout](https://docs.zepp.com/zh-cn/docs/reference/device-app-api/newAPI/global/clearTimeout/)。
 
